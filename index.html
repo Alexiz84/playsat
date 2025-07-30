@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Playsat – Professionella digitala tjänster, webbdesign, systemintegration & support för företag och privatpersoner.">
+  <title>Playsat</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="ic_launcher.png" type="image/png">
+  <!-- Favicon (valfritt) -->
+  <!-- <link rel="icon" type="image/png" href="ic_launcher.png"> -->
+</head>
+<body>
+  <header>
+    <div class="logo-wrap">
+      <img src="ic_launcher.png" alt="Playsat Logo" class="logo">
+      <span class="brand-title">Playsat</span>
+    </div>
+    <nav>
+      <a href="#services">Tjänster</a>
+      <a href="#about">Om Oss</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Digitala tjänster & Webblösningar</h1>
+      <p>
+        Professionell webbutveckling, integration, support och systemlösningar för företag och privatpersoner.
+      </p>
+      <a href="#contact" class="cta-btn">Kontakta oss</a>
+    </section>
+
+    <section id="services" class="section services">
+      <h2>Våra tjänster</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <h3>Webbdesign</h3>
+          <p>Modern, responsiv och säker design för företag och privatpersoner.</p>
+        </div>
+        <div class="service-card">
+          <h3>Integration</h3>
+          <p>Smidiga integrationer med betalningslösningar, API:er & tredjepartstjänster.</p>
+        </div>
+        <div class="service-card">
+          <h3>Support & Drift</h3>
+          <p>Teknisk support, driftövervakning och felsökning av system & webbplatser.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <h2>Om Playsat</h2>
+      <p>
+        Playsat är ett teknikbolag som erbjuder tjänster inom digital utveckling, integration och support.
+        Vi värdesätter säkerhet, kvalitet och långsiktiga relationer med våra kunder.
+      </p>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2>Kontakta oss</h2>
+      <form 
+        class="contact-form" 
+        id="contactForm"
+        autocomplete="off"
+      >
+        <input type="text" name="name" placeholder="Ditt namn" required>
+        <input type="email" name="email" placeholder="Din e-post" required>
+        <textarea name="message" placeholder="Ditt meddelande" required></textarea>
+        <!-- Honeypot for bots -->
+        <input type="text" name="_gotcha" style="display:none">
+        <button type="submit" class="cta-btn">Skicka</button>
+        <div id="form-status" style="margin-top:18px;font-size:1.13rem;"></div>
+      </form>
+      <div class="contact-details">
+        <p><strong>E-post:</strong> info.playsat@gmail.com</p>
+        <p><strong>Adress:</strong> Stockholm, Sverige</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <span>© 2025 Playsat – All rights reserved.</span>
+    <br>
+    <a href="#privacy" class="privacy-link">Integritetspolicy (GDPR)</a>
+  </footer>
+  
+  <!-- Modal för GDPR/Integritetspolicy -->
+  <div id="privacy-modal" class="privacy-modal">
+    <div class="privacy-modal-content">
+      <span id="privacy-close" class="privacy-close">&times;</span>
+      <h2>Integritetspolicy (GDPR)</h2>
+      <p>
+        Playsat värnar om din personliga integritet och följer EU:s dataskyddsförordning (GDPR). Vi samlar endast in den information som är nödvändig för att kunna kommunicera med dig och leverera våra tjänster. <br><br>
+        <strong>Personuppgifter:</strong> Vi kan samla in namn, e-postadress och meddelanden om du kontaktar oss via formuläret.<br>
+        <strong>Användning av uppgifter:</strong> Uppgifterna används endast för kundkontakt, fakturering och support.<br>
+        <strong>Lagring & säkerhet:</strong> Vi lagrar dina uppgifter säkert och lämnar aldrig ut dem till tredje part utan ditt samtycke.<br>
+        <strong>Rättigheter:</strong> Du har rätt att begära utdrag, rättelse eller radering av dina personuppgifter. Kontakta oss via e-post för frågor om integritet.<br>
+        <strong>Kakor (cookies):</strong> Vår webbplats använder endast tekniskt nödvändiga kakor och inga spårningskakor.<br><br>
+        Vid frågor, kontakta oss på <a href="mailto:info.playsat@gmail.com">info.playsat@gmail.com</a>.
+      </p>
+    </div>
+  </div>
+  <script>
+  // GDPR Modal hantering
+  document.querySelector('.privacy-link').onclick = function(e) {
+    e.preventDefault();
+    document.getElementById('privacy-modal').style.display = 'flex';
+  };
+  document.getElementById('privacy-close').onclick = function() {
+    document.getElementById('privacy-modal').style.display = 'none';
+  };
+  window.onclick = function(event) {
+    var modal = document.getElementById('privacy-modal');
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  // AJAX Formspree-integration
+  document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('contactForm');
+    var status = document.getElementById('form-status');
+    if (form) {
+      form.addEventListener('submit', function(ev) {
+        ev.preventDefault();
+        status.textContent = "";
+        var data = new FormData(form);
+        fetch('https://formspree.io/f/xovlljnk', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        }).then(function(response) {
+          if (response.ok) {
+            form.reset();
+            status.textContent = "Tack för ditt meddelande! Vi återkommer så snart vi kan.";
+            status.style.color = "#00eaff";
+          } else {
+            response.json().then(function(data){
+              if (Object.hasOwn(data, 'errors')) {
+                status.textContent = data["errors"].map(function(error) { return error["message"]; }).join(", ");
+              } else {
+                status.textContent = "Ett fel uppstod, försök igen.";
+              }
+              status.style.color = "#ff4444";
+            });
+          }
+        }).catch(function(error) {
+          status.textContent = "Kunde inte skicka meddelandet. Kontrollera din internetanslutning.";
+          status.style.color = "#ff4444";
+        });
+      });
+    }
+  });
+  </script>
+</body>
+</html>
+
+

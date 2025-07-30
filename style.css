@@ -1,0 +1,280 @@
+/* ====== Allmän Bas ====== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #1a1142 url('blue-and-pink-aesthetic-neon-2rsn3z0iezyln2nl.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #e8f2fc;
+}
+
+/* Skuggad overlay för att läsa text */
+body::before {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(120deg, #26194399 50%, #11baf244 100%);
+  pointer-events: none;
+}
+
+header {
+  background: rgba(24,24,40, 0.85);
+  box-shadow: 0 4px 18px 0 #14143499;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 40px 22px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-radius: 0 0 32px 32px;
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #20204a;
+  box-shadow: 0 2px 16px #00eaff88;
+}
+
+.brand-title {
+  font-size: 2.1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #00eaff;
+  text-shadow: 0 2px 10px #00eaff60;
+}
+
+nav a {
+  color: #e8f2fc;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-left: 30px;
+  transition: color .2s;
+}
+
+nav a:hover {
+  color: #ff6bfa;
+  text-shadow: 0 0 6px #ff98fb99;
+}
+
+/* ====== Hero Section ====== */
+.hero {
+  text-align: center;
+  padding: 85px 16px 78px 16px;
+  background: rgba(30,20,65,0.6);
+  box-shadow: 0 8px 40px 0 #0070f033;
+  border-radius: 0 0 42px 42px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 36px;
+}
+
+.hero h1 {
+  font-size: 2.7rem;
+  margin-bottom: 20px;
+  color: #00eaff;
+  text-shadow: 0 2px 16px #00eaff99, 0 0 38px #fa49d188;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: #c8d8e8;
+  max-width: 540px;
+  margin: 0 auto 34px auto;
+  text-shadow: 0 0 12px #1b1b3d;
+}
+
+.cta-btn {
+  background: linear-gradient(90deg, #00eaff 30%, #ff6bfa 100%);
+  color: #181828;
+  padding: 16px 46px;
+  font-size: 1.21rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 28px;
+  cursor: pointer;
+  box-shadow: 0 2px 20px #00eaff60;
+  transition: background .2s, color .2s, box-shadow .2s;
+}
+
+.cta-btn:hover {
+  background: #ff6bfa;
+  color: #fff;
+  box-shadow: 0 4px 24px #ff98fb55;
+}
+
+/* ====== Sections ====== */
+.section {
+  padding: 54px 0 38px 0;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+h2 {
+  color: #00eaff;
+  margin-bottom: 34px;
+  font-size: 2.1rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 14px #00eaff80, 0 0 24px #ff98fb77;
+}
+
+.services .service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+  gap: 34px;
+}
+
+.service-card {
+  background: rgba(35,35,66,0.93);
+  border-radius: 22px;
+  box-shadow: 0 3px 22px #00eaff55;
+  padding: 34px 26px;
+  color: #fff;
+  text-align: left;
+  transition: box-shadow .2s;
+}
+
+.service-card:hover {
+  box-shadow: 0 8px 38px #ff98fb77;
+}
+
+.service-card h3 {
+  color: #ff6bfa;
+  margin-bottom: 10px;
+}
+
+.about p, .contact-details {
+  color: #d0e1f5;
+  font-size: 1.13rem;
+}
+
+/* ====== Kontakt ====== */
+.contact-form {
+  max-width: 420px;
+  margin: 0 auto 24px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: #1a1a38cc;
+  border: 1.5px solid #00eaff44;
+  color: #e8f2fc;
+  font-size: 1.06rem;
+  border-radius: 10px;
+  padding: 14px 17px;
+  outline: none;
+  transition: border .2s, box-shadow .2s;
+  font-family: inherit;
+  box-shadow: 0 2px 8px #00eaff22;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1.5px solid #ff6bfa;
+  box-shadow: 0 0 12px #ff6bfa44;
+}
+
+.contact-form button {
+  align-self: flex-end;
+}
+
+/* ====== Footer ====== */
+footer {
+  background: rgba(21,21,39,0.93);
+  color: #7fdfff;
+  text-align: center;
+  font-size: 1rem;
+  padding: 32px 0 12px 0;
+  border-radius: 22px 22px 0 0;
+  margin-top: 50px;
+  box-shadow: 0 0 24px #00eaff33;
+  position: relative;
+  z-index: 2;
+}
+
+.privacy-link {
+  color: #00eaff;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 1.05rem;
+}
+
+.privacy-modal {
+  display: none;
+  position: fixed;
+  z-index: 5000;
+  left: 0; top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(20, 30, 44, 0.92);
+  align-items: center;
+  justify-content: center;
+}
+
+.privacy-modal-content {
+  background: #222243ee;
+  color: #e8f2fc;
+  border-radius: 24px;
+  max-width: 480px;
+  margin: 70px auto;
+  padding: 38px 34px 28px 34px;
+  position: relative;
+  box-shadow: 0 8px 40px #ff98fb40;
+  font-size: 1.09rem;
+}
+
+.privacy-close {
+  position: absolute;
+  top: 18px; right: 22px;
+  font-size: 2.1rem;
+  color: #00eaff;
+  cursor: pointer;
+}
+
+.privacy-modal a {
+  color: #00eaff;
+  text-decoration: underline;
+}
+
+
+/* ====== Responsive ====== */
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    padding: 14px 12px;
+    gap: 12px;
+    border-radius: 0 0 18px 18px;
+  }
+  nav {
+    margin-left: 0;
+  }
+  .hero {
+    padding: 42px 4px 38px 4px;
+    border-radius: 0 0 18px 18px;
+  }
+  .brand-title {
+    font-size: 1.35rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  .service-card {
+    padding: 20px 10px;
+  }
+}
+
