@@ -7,8 +7,6 @@
   <title>Playsat</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="ic_launcher.png" type="image/png">
-  <!-- Favicon (valfritt) -->
-  <!-- <link rel="icon" type="image/png" href="ic_launcher.png"> -->
 </head>
 <body>
   <header>
@@ -17,79 +15,95 @@
       <span class="brand-title">Playsat</span>
     </div>
     <nav>
-      <a href="#services">Tjänster</a>
-      <a href="#about">Om Oss</a>
-      <a href="#contact">Kontakt</a>
+      <a href="#services" data-translate="nav-services">Tjänster</a>
+      <a href="#about" data-translate="nav-about">Om Oss</a>
+      <a href="#contact" data-translate="nav-contact">Kontakt</a>
+      <select id="lang-switcher" style="margin-left:24px;">
+        <option value="sv">Svenska</option>
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+        <option value="de">Deutsch</option>
+        <option value="tr">Türkçe</option>
+        <option value="ar">العربية</option>
+      </select>
     </nav>
   </header>
   <main>
     <section class="hero">
-      <h1>Digitala tjänster & Webblösningar</h1>
-      <p>
+      <h1 data-translate="hero-title">Digitala tjänster & Webblösningar</h1>
+      <p data-translate="hero-desc">
         Professionell webbutveckling, integration, support och systemlösningar för företag och privatpersoner.
       </p>
-      <a href="#contact" class="cta-btn">Kontakta oss</a>
+      <a href="#contact" class="cta-btn" data-translate="cta-contact">Kontakta oss</a>
     </section>
 
     <section id="services" class="section services">
-      <h2>Våra tjänster</h2>
+      <h2 data-translate="services-title">Våra tjänster</h2>
       <div class="service-grid">
         <div class="service-card">
-          <h3>Webbdesign</h3>
-          <p>Modern, responsiv och säker design för företag och privatpersoner.</p>
+          <h3 data-translate="services-web">Webbdesign</h3>
+          <p data-translate="services-web-desc">Modern, responsiv och säker design för företag och privatpersoner.</p>
         </div>
         <div class="service-card">
-          <h3>Integration</h3>
-          <p>Smidiga integrationer med betalningslösningar, API:er & tredjepartstjänster.</p>
+          <h3 data-translate="services-int">Integration</h3>
+          <p data-translate="services-int-desc">Smidiga integrationer med betalningslösningar, API:er & tredjepartstjänster.</p>
         </div>
         <div class="service-card">
-          <h3>Support & Drift</h3>
-          <p>Teknisk support, driftövervakning och felsökning av system & webbplatser.</p>
+          <h3 data-translate="services-sup">Support & Drift</h3>
+          <p data-translate="services-sup-desc">Teknisk support, driftövervakning och felsökning av system & webbplatser.</p>
         </div>
       </div>
     </section>
 
     <section id="about" class="section about">
-      <h2>Om Playsat</h2>
-      <p>
+      <h2 data-translate="about-title">Om Playsat</h2>
+      <p data-translate="about-desc">
         Playsat är ett teknikbolag som erbjuder tjänster inom digital utveckling, integration och support.
         Vi värdesätter säkerhet, kvalitet och långsiktiga relationer med våra kunder.
       </p>
     </section>
 
     <section id="contact" class="section contact">
-      <h2>Kontakta oss</h2>
+      <h2 data-translate="contact-title">Kontakta oss</h2>
       <form 
         class="contact-form" 
         id="contactForm"
         autocomplete="off"
       >
-        <input type="text" name="name" placeholder="Ditt namn" required>
-        <input type="email" name="email" placeholder="Din e-post" required>
-        <textarea name="message" placeholder="Ditt meddelande" required></textarea>
-        <!-- Honeypot for bots -->
+        <input type="text" name="name" placeholder="Ditt namn" required data-translate-placeholder="contact-name">
+        <input type="email" name="email" placeholder="Din e-post" required data-translate-placeholder="contact-email">
+        <textarea name="message" placeholder="Ditt meddelande" required data-translate-placeholder="contact-msg"></textarea>
         <input type="text" name="_gotcha" style="display:none">
-        <button type="submit" class="cta-btn">Skicka</button>
+        <button type="submit" class="cta-btn" data-translate="contact-send">Skicka</button>
         <div id="form-status" style="margin-top:18px;font-size:1.13rem;"></div>
       </form>
       <div class="contact-details">
-        <p><strong>E-post:</strong> info.playsat@gmail.com</p>
-        <p><strong>Adress:</strong> Stockholm, Sverige</p>
+        <p><strong data-translate="contact-mail-label">E-post:</strong> <span data-translate="contact-mail-val">info.playsat@gmail.com</span></p>
+        <p><strong data-translate="contact-adr-label">Adress:</strong> <span data-translate="contact-adr-val">Stockholm, Sverige</span></p>
       </div>
     </section>
+    
+    <section id="policy" class="section policy">
+      <h2 data-translate="policy-title">Återbetalningspolicy & Tvistpolicy</h2>
+      <p data-translate="policy-desc">
+        Kontakta oss för återbetalning eller reklamation. Eventuella tvister hanteras enligt gällande lagstiftning.
+      </p>
+    </section>
+
   </main>
   <footer>
     <span>© 2025 Playsat – All rights reserved.</span>
     <br>
-    <a href="#privacy" class="privacy-link">Integritetspolicy (GDPR)</a>
+    <a href="#privacy" class="privacy-link" data-translate="privacy-link">Integritetspolicy (GDPR)</a>
   </footer>
   
   <!-- Modal för GDPR/Integritetspolicy -->
   <div id="privacy-modal" class="privacy-modal">
     <div class="privacy-modal-content">
       <span id="privacy-close" class="privacy-close">&times;</span>
-      <h2>Integritetspolicy (GDPR)</h2>
-      <p>
+      <h2 data-translate="gdpr-title">Integritetspolicy (GDPR)</h2>
+      <p data-translate="gdpr-desc">
         Playsat värnar om din personliga integritet och följer EU:s dataskyddsförordning (GDPR). Vi samlar endast in den information som är nödvändig för att kunna kommunicera med dig och leverera våra tjänster. <br><br>
         <strong>Personuppgifter:</strong> Vi kan samla in namn, e-postadress och meddelanden om du kontaktar oss via formuläret.<br>
         <strong>Användning av uppgifter:</strong> Uppgifterna används endast för kundkontakt, fakturering och support.<br>
@@ -101,23 +115,187 @@
     </div>
   </div>
   <script>
-  // GDPR Modal hantering
-  document.querySelector('.privacy-link').onclick = function(e) {
-    e.preventDefault();
-    document.getElementById('privacy-modal').style.display = 'flex';
-  };
-  document.getElementById('privacy-close').onclick = function() {
-    document.getElementById('privacy-modal').style.display = 'none';
-  };
-  window.onclick = function(event) {
-    var modal = document.getElementById('privacy-modal');
-    if (event.target == modal) {
-      modal.style.display = "none";
+  // Översättningar
+  const translations = {
+    sv: {
+      "nav-services":"Tjänster", "nav-about":"Om Oss", "nav-contact":"Kontakt",
+      "hero-title":"Digitala tjänster & Webblösningar",
+      "hero-desc":"Professionell webbutveckling, integration, support och systemlösningar för företag och privatpersoner.",
+      "cta-contact":"Kontakta oss",
+      "services-title":"Våra tjänster", "services-web":"Webbdesign",
+      "services-web-desc":"Modern, responsiv och säker design för företag och privatpersoner.",
+      "services-int":"Integration", "services-int-desc":"Smidiga integrationer med betalningslösningar, API:er & tredjepartstjänster.",
+      "services-sup":"Support & Drift", "services-sup-desc":"Teknisk support, driftövervakning och felsökning av system & webbplatser.",
+      "about-title":"Om Playsat", "about-desc":"Playsat är ett teknikbolag som erbjuder tjänster inom digital utveckling, integration och support.\nVi värdesätter säkerhet, kvalitet och långsiktiga relationer med våra kunder.",
+      "contact-title":"Kontakta oss", "contact-send":"Skicka",
+      "contact-name":"Ditt namn", "contact-email":"Din e-post", "contact-msg":"Ditt meddelande",
+      "contact-mail-label":"E-post:", "contact-mail-val":"info.playsat@gmail.com", "contact-adr-label":"Adress:", "contact-adr-val":"Stockholm, Sverige",
+      "policy-title":"Återbetalningspolicy & Tvistpolicy", "policy-desc":"Kontakta oss för återbetalning eller reklamation. Eventuella tvister hanteras enligt gällande lagstiftning.",
+      "privacy-link":"Integritetspolicy (GDPR)",
+      "gdpr-title":"Integritetspolicy (GDPR)",
+      "gdpr-desc":"Playsat värnar om din personliga integritet och följer EU:s dataskyddsförordning (GDPR). Vi samlar endast in den information som är nödvändig för att kunna kommunicera med dig och leverera våra tjänster. <br><br><strong>Personuppgifter:</strong> Vi kan samla in namn, e-postadress och meddelanden om du kontaktar oss via formuläret.<br><strong>Användning av uppgifter:</strong> Uppgifterna används endast för kundkontakt, fakturering och support.<br><strong>Lagring & säkerhet:</strong> Vi lagrar dina uppgifter säkert och lämnar aldrig ut dem till tredje part utan ditt samtycke.<br><strong>Rättigheter:</strong> Du har rätt att begära utdrag, rättelse eller radering av dina personuppgifter. Kontakta oss via e-post för frågor om integritet.<br><strong>Kakor (cookies):</strong> Vår webbplats använder endast tekniskt nödvändiga kakor och inga spårningskakor.<br><br>Vid frågor, kontakta oss på <a href=\"mailto:info.playsat@gmail.com\">info.playsat@gmail.com</a>."
+    },
+    en: {
+      "nav-services":"Services", "nav-about":"About", "nav-contact":"Contact",
+      "hero-title":"Digital Services & Web Solutions",
+      "hero-desc":"Professional web development, integration, support and system solutions for companies and individuals.",
+      "cta-contact":"Contact us",
+      "services-title":"Our Services", "services-web":"Web Design",
+      "services-web-desc":"Modern, responsive and secure design for businesses and individuals.",
+      "services-int":"Integration", "services-int-desc":"Smooth integrations with payment solutions, APIs & third-party services.",
+      "services-sup":"Support & Operations", "services-sup-desc":"Technical support, system monitoring and troubleshooting.",
+      "about-title":"About Playsat", "about-desc":"Playsat is a technology company offering services in digital development, integration and support.\nWe value security, quality and long-term relationships with our clients.",
+      "contact-title":"Contact Us", "contact-send":"Send",
+      "contact-name":"Your name", "contact-email":"Your email", "contact-msg":"Your message",
+      "contact-mail-label":"Email:", "contact-mail-val":"info.playsat@gmail.com", "contact-adr-label":"Address:", "contact-adr-val":"Stockholm, Sweden",
+      "policy-title":"Refund & Dispute Policy", "policy-desc":"Contact us for refund or complaint. Any disputes are handled according to applicable law.",
+      "privacy-link":"Privacy Policy (GDPR)",
+      "gdpr-title":"Privacy Policy (GDPR)",
+      "gdpr-desc":"Playsat cares about your privacy and complies with the EU General Data Protection Regulation (GDPR). We only collect the information necessary to communicate with you and deliver our services. <br><br><strong>Personal data:</strong> We may collect your name, email address, and messages if you contact us via the form.<br><strong>Use of data:</strong> The data is used only for customer contact, invoicing, and support.<br><strong>Storage & security:</strong> We store your data securely and never share it with third parties without your consent.<br><strong>Rights:</strong> You have the right to request a copy, correction or deletion of your personal data. Contact us by email for questions about privacy.<br><strong>Cookies:</strong> Our website uses only technically necessary cookies and no tracking cookies.<br><br>For questions, contact us at <a href=\"mailto:info.playsat@gmail.com\">info.playsat@gmail.com</a>."
+    },
+    // ---- Lägg till fler språk på samma sätt nedan ----
+    fr: {
+      "nav-services":"Services", "nav-about":"À propos", "nav-contact":"Contact",
+      "hero-title":"Services numériques & solutions web",
+      "hero-desc":"Développement web professionnel, intégration, support et solutions système pour entreprises et particuliers.",
+      "cta-contact":"Contactez-nous",
+      "services-title":"Nos services", "services-web":"Webdesign",
+      "services-web-desc":"Conception moderne, réactive et sécurisée pour entreprises et particuliers.",
+      "services-int":"Intégration", "services-int-desc":"Intégrations fluides avec solutions de paiement, API et services tiers.",
+      "services-sup":"Support & Exploitation", "services-sup-desc":"Support technique, surveillance et dépannage des systèmes & sites web.",
+      "about-title":"À propos de Playsat", "about-desc":"Playsat est une société technologique qui propose des services de développement numérique, d'intégration et de support.\nNous valorisons la sécurité, la qualité et des relations à long terme avec nos clients.",
+      "contact-title":"Contactez-nous", "contact-send":"Envoyer",
+      "contact-name":"Votre nom", "contact-email":"Votre e-mail", "contact-msg":"Votre message",
+      "contact-mail-label":"E-mail :", "contact-mail-val":"info.playsat@gmail.com", "contact-adr-label":"Adresse :", "contact-adr-val":"Stockholm, Suède",
+      "policy-title":"Politique de remboursement et de litige", "policy-desc":"Contactez-nous pour un remboursement ou une réclamation. Tout litige est traité conformément à la législation en vigueur.",
+      "privacy-link":"Politique de confidentialité (RGPD)",
+      "gdpr-title":"Politique de confidentialité (RGPD)",
+      "gdpr-desc":"Playsat attache de l'importance à votre vie privée et respecte le Règlement général sur la protection des données (RGPD) de l'UE. Nous ne collectons que les informations nécessaires pour communiquer avec vous et fournir nos services. <br><br><strong>Données personnelles :</strong> Nous pouvons collecter votre nom, votre adresse e-mail et vos messages si vous nous contactez via le formulaire.<br><strong>Utilisation des données :</strong> Les données sont utilisées uniquement pour le contact client, la facturation et le support.<br><strong>Stockage & sécurité :</strong> Nous stockons vos données en toute sécurité et ne les partageons jamais avec des tiers sans votre consentement.<br><strong>Droits :</strong> Vous avez le droit de demander une copie, une correction ou la suppression de vos données personnelles. Contactez-nous par e-mail pour toute question relative à la confidentialité.<br><strong>Cookies :</strong> Notre site n'utilise que des cookies techniquement nécessaires et aucun cookie de suivi.<br><br>Pour toute question, contactez-nous à <a href=\"mailto:info.playsat@gmail.com\">info.playsat@gmail.com</a>."
+    },
+    es: {
+      "nav-services":"Servicios", "nav-about":"Sobre Nosotros", "nav-contact":"Contacto",
+      "hero-title":"Servicios digitales y soluciones web",
+      "hero-desc":"Desarrollo web profesional, integración, soporte y soluciones de sistemas para empresas y particulares.",
+      "cta-contact":"Contáctanos",
+      "services-title":"Nuestros servicios", "services-web":"Diseño web",
+      "services-web-desc":"Diseño moderno, responsivo y seguro para empresas y particulares.",
+      "services-int":"Integración", "services-int-desc":"Integraciones sencillas con soluciones de pago, API y servicios de terceros.",
+      "services-sup":"Soporte y Operaciones", "services-sup-desc":"Soporte técnico, monitorización y resolución de problemas de sistemas y sitios web.",
+      "about-title":"Sobre Playsat", "about-desc":"Playsat es una empresa tecnológica que ofrece servicios de desarrollo digital, integración y soporte.\nValoramos la seguridad, la calidad y las relaciones a largo plazo con nuestros clientes.",
+      "contact-title":"Contáctanos", "contact-send":"Enviar",
+      "contact-name":"Tu nombre", "contact-email":"Tu correo electrónico", "contact-msg":"Tu mensaje",
+      "contact-mail-label":"Correo electrónico:", "contact-mail-val":"info.playsat@gmail.com", "contact-adr-label":"Dirección:", "contact-adr-val":"Estocolmo, Suecia",
+      "policy-title":"Política de reembolso y disputas", "policy-desc":"Contáctanos para reembolsos o reclamaciones. Cualquier disputa se resuelve de acuerdo con la legislación vigente.",
+      "privacy-link":"Política de privacidad (RGPD)",
+      "gdpr-title":"Política de privacidad (RGPD)",
+      "gdpr-desc":"Playsat se preocupa por tu privacidad y cumple con el Reglamento General de Protección de Datos (RGPD) de la UE. Solo recopilamos la información necesaria para comunicarnos contigo y prestar nuestros servicios. <br><br><strong>Datos personales:</strong> Podemos recopilar tu nombre, correo electrónico y mensajes si nos contactas a través del formulario.<br><strong>Uso de los datos:</strong> Los datos solo se utilizan para contacto con el cliente, facturación y soporte.<br><strong>Almacenamiento y seguridad:</strong> Almacenamos tus datos de forma segura y nunca los compartimos con terceros sin tu consentimiento.<br><strong>Derechos:</strong> Tienes derecho a solicitar una copia, corrección o eliminación de tus datos personales. Contáctanos por correo electrónico para cuestiones de privacidad.<br><strong>Cookies:</strong> Nuestro sitio solo utiliza cookies técnicamente necesarias y ninguna cookie de seguimiento.<br><br>Para preguntas, contáctanos en <a href=\"mailto:info.playsat@gmail.com\">info.playsat@gmail.com</a>."
+    },
+    de: {
+      "nav-services":"Dienstleistungen", "nav-about":"Über uns", "nav-contact":"Kontakt",
+      "hero-title":"Digitale Dienstleistungen & Weblösungen",
+      "hero-desc":"Professionelle Webentwicklung, Integration, Support und Systemlösungen für Unternehmen und Privatpersonen.",
+      "cta-contact":"Kontaktieren Sie uns",
+      "services-title":"Unsere Dienstleistungen", "services-web":"Webdesign",
+      "services-web-desc":"Modernes, responsives und sicheres Design für Unternehmen und Privatpersonen.",
+      "services-int":"Integration", "services-int-desc":"Nahtlose Integration von Zahlungslösungen, APIs und Drittanbieterdiensten.",
+      "services-sup":"Support & Betrieb", "services-sup-desc":"Technischer Support, Systemüberwachung und Fehlerbehebung für Systeme und Websites.",
+      "about-title":"Über Playsat", "about-desc":"Playsat ist ein Technologieunternehmen, das Dienstleistungen in den Bereichen digitale Entwicklung, Integration und Support anbietet.\nWir legen Wert auf Sicherheit, Qualität und langfristige Beziehungen zu unseren Kunden.",
+      "contact-title":"Kontaktieren Sie uns", "contact-send":"Senden",
+      "contact-name":"Ihr Name", "contact-email":"Ihre E-Mail", "contact-msg":"Ihre Nachricht",
+      "contact-mail-label":"E-Mail:", "contact-mail-val":"info.playsat@gmail.com", "contact-adr-label":"Adresse:", "contact-adr-val":"Stockholm, Schweden",
+      "policy-title":"Rückerstattungs- & Streitbeilegungspolitik", "policy-desc":"Kontaktieren Sie uns für Rückerstattungen oder Reklamationen. Alle Streitigkeiten werden nach geltendem Recht behandelt.",
+      "privacy-link":"Datenschutzrichtlinie (DSGVO)",
+      "gdpr-title":"Datenschutzrichtlinie (DSGVO)",
+      "gdpr-desc":"Playsat legt Wert auf Ihre Privatsphäre und hält die EU-Datenschutz-Grundverordnung (DSGVO) ein. Wir erheben nur die Daten, die zur Kommunikation mit Ihnen und zur Erbringung unserer Dienstleistungen erforderlich sind. <br><br><strong>Personenbezogene Daten:</strong> Wir können Ihren Namen, Ihre E-Mail-Adresse und Nachrichten erfassen, wenn Sie uns über das Formular kontaktieren.<br><strong>Verwendung der Daten:</strong> Die Daten werden nur für den Kundenkontakt, die Rechnungsstellung und den Support verwendet.<br><strong>Speicherung & Sicherheit:</strong> Wir speichern Ihre Daten sicher und geben sie niemals ohne Ihre Zustimmung an Dritte weiter.<br><strong>Rechte:</strong> Sie haben das Recht, eine Kopie, Berichtigung oder Löschung Ihrer personenbezogenen Daten zu verlangen. Kontaktieren Sie uns per E-Mail bei Fragen zum Datenschutz.<br><strong>Cookies:</strong> Unsere Website verwendet nur technisch notwendige Cookies und keine Tracking-Cookies.<br><br>Bei Fragen kontaktieren Sie uns unter <a href=\"mailto:info.playsat@gmail.com\">info.playsat@gmail.com</a>."
+    },
+    tr: {
+      "nav-services":"Hizmetler", "nav-about":"Hakkımızda", "nav-contact":"İletişim",
+      "hero-title":"Dijital Hizmetler & Web Çözümleri",
+      "hero-desc":"Şirketler ve bireyler için profesyonel web geliştirme, entegrasyon, destek ve sistem çözümleri.",
+      "cta-contact":"Bize ulaşın",
+      "services-title":"Hizmetlerimiz", "services-web":"Web Tasarımı",
+      "services-web-desc":"Şirketler ve bireyler için modern, duyarlı ve güvenli tasarım.",
+      "services-int":"Entegrasyon", "services-int-desc":"Ödeme çözümleri, API'ler ve üçüncü taraf hizmetlerle sorunsuz entegrasyonlar.",
+      "services-sup":"Destek & Operasyon", "services-sup-desc":"Teknik destek, sistem izleme ve sorun giderme.",
+      "about-title":"Playsat Hakkında", "about-desc":"Playsat, dijital geliştirme, entegrasyon ve destek alanlarında hizmet sunan bir teknoloji şirketidir.\nGüvenlik, kalite ve müşterilerimizle uzun vadeli ilişkiler bizim için önemlidir.",
+      "contact-title":"Bize ulaşın", "contact-send":"Gönder",
+      "contact-name":"Adınız", "contact-email":"E-posta adresiniz", "contact-msg":"Mesajınız",
+      "contact-mail-label":"E-posta:", "contact-mail-val":"info.playsat@gmail.com", "contact-adr-label":"Adres:", "contact-adr-val":"Stockholm, İsveç",
+      "policy-title":"İade & İhtilaf Politikası", "policy-desc":"İade veya şikayet için bizimle iletişime geçin. Herhangi bir ihtilaf yürürlükteki yasalara göre çözülür.",
+      "privacy-link":"Gizlilik Politikası (GDPR)",
+      "gdpr-title":"Gizlilik Politikası (GDPR)",
+      "gdpr-desc":"Playsat, gizliliğinize önem verir ve AB Genel Veri Koruma Yönetmeliği'ne (GDPR) uyar. Sizinle iletişim kurmak ve hizmetlerimizi sunmak için gerekli olan bilgiler dışında veri toplamıyoruz. <br><br><strong>Kişisel veriler:</strong> Formu kullanarak bize ulaşırsanız adınızı, e-posta adresinizi ve mesajınızı toplayabiliriz.<br><strong>Veri kullanımı:</strong> Veriler sadece müşteri iletişimi, faturalandırma ve destek için kullanılır.<br><strong>Saklama & güvenlik:</strong> Verilerinizi güvenli bir şekilde saklıyor ve sizin izniniz olmadan asla üçüncü şahıslarla paylaşmıyoruz.<br><strong>Haklar:</strong> Kişisel verilerinizin bir kopyasını, düzeltilmesini veya silinmesini talep etme hakkına sahipsiniz. Gizlilikle ilgili sorularınız için e-posta ile bize ulaşabilirsiniz.<br><strong>Çerezler:</strong> Sitemiz yalnızca teknik olarak gerekli çerezleri kullanır, izleme çerezi kullanmaz.<br><br>Sorularınız için <a href=\"mailto:info.playsat@gmail.com\">info.playsat@gmail.com</a> adresinden bizimle iletişime geçin."
+    },
+    ar: {
+      "nav-services":"الخدمات", "nav-about":"من نحن", "nav-contact":"اتصال",
+      "hero-title":"الخدمات الرقمية وحلول الويب",
+      "hero-desc":"تطوير مواقع محترف، تكامل، دعم وحلول أنظمة للشركات والأفراد.",
+      "cta-contact":"تواصل معنا",
+      "services-title":"خدماتنا", "services-web":"تصميم المواقع",
+      "services-web-desc":"تصميم عصري وآمن وسريع للشركات والأفراد.",
+      "services-int":"التكامل", "services-int-desc":"تكامل سلس مع حلول الدفع وواجهات البرمجة وخدمات الأطراف الثالثة.",
+      "services-sup":"الدعم والتشغيل", "services-sup-desc":"دعم فني، مراقبة الأنظمة وحل المشكلات.",
+      "about-title":"حول Playsat", "about-desc":"Playsat هي شركة تقنية تقدم خدمات في التطوير الرقمي والتكامل والدعم.\nنقدر الأمان والجودة والعلاقات طويلة الأمد مع عملائنا.",
+      "contact-title":"اتصل بنا", "contact-send":"إرسال",
+      "contact-name":"اسمك", "contact-email":"بريدك الإلكتروني", "contact-msg":"رسالتك",
+      "contact-mail-label":"البريد الإلكتروني:", "contact-mail-val":"info.playsat@gmail.com", "contact-adr-label":"العنوان:", "contact-adr-val":"ستوكهولم، السويد",
+      "policy-title":"سياسة الاسترداد وحل النزاعات", "policy-desc":"يرجى التواصل معنا للاسترداد أو تقديم شكوى. تتم معالجة أي نزاعات وفقًا للقوانين المعمول بها.",
+      "privacy-link":"سياسة الخصوصية (GDPR)",
+      "gdpr-title":"سياسة الخصوصية (GDPR)",
+      "gdpr-desc":"تهتم Playsat بخصوصيتك وتلتزم باللائحة العامة لحماية البيانات (GDPR) التابعة للاتحاد الأوروبي. نجمع فقط المعلومات الضرورية للتواصل معك وتقديم خدماتنا. <br><br><strong>البيانات الشخصية:</strong> قد نقوم بجمع اسمك وبريدك الإلكتروني ورسائلك إذا تواصلت معنا عبر النموذج.<br><strong>استخدام البيانات:</strong> يتم استخدام البيانات فقط للاتصال بالعملاء، والفوترة، والدعم.<br><strong>التخزين والأمان:</strong> نقوم بتخزين بياناتك بأمان ولا نشاركها أبدًا مع أطراف ثالثة دون موافقتك.<br><strong>الحقوق:</strong> لديك الحق في طلب نسخة أو تصحيح أو حذف بياناتك الشخصية. تواصل معنا عبر البريد الإلكتروني إذا كانت لديك أسئلة حول الخصوصية.<br><strong>الكوكيز:</strong> يستخدم موقعنا فقط الكوكيز الضرورية تقنيًا ولا يستخدم أي كوكيز تتبع.<br><br>للاستفسارات، يرجى التواصل معنا عبر <a href=\"mailto:info.playsat@gmail.com\">info.playsat@gmail.com</a>."
     }
   };
 
-  // AJAX Formspree-integration
+  // Funktion: Byt språk
+  function setLanguage(lang) {
+    document.querySelectorAll('[data-translate]').forEach(function(el) {
+      var key = el.getAttribute('data-translate');
+      if (translations[lang] && translations[lang][key]) {
+        el.innerHTML = translations[lang][key];
+      }
+    });
+    // Placeholder-översättningar
+    document.querySelectorAll('[data-translate-placeholder]').forEach(function(el) {
+      var key = el.getAttribute('data-translate-placeholder');
+      if (translations[lang] && translations[lang][key]) {
+        el.setAttribute('placeholder', translations[lang][key]);
+      }
+    });
+    // RTL-stöd för arabiska
+    if(lang === "ar") {
+      document.body.dir = "rtl";
+      document.body.style.textAlign = "right";
+    } else {
+      document.body.dir = "ltr";
+      document.body.style.textAlign = "";
+    }
+  }
+
+  // Språkväxling
   document.addEventListener('DOMContentLoaded', function() {
+    var switcher = document.getElementById('lang-switcher');
+    switcher.addEventListener('change', function() {
+      setLanguage(this.value);
+    });
+    // Sätt default språk
+    setLanguage(switcher.value);
+
+    // GDPR Modal hantering
+    document.querySelector('.privacy-link').onclick = function(e) {
+      e.preventDefault();
+      document.getElementById('privacy-modal').style.display = 'flex';
+    };
+    document.getElementById('privacy-close').onclick = function() {
+      document.getElementById('privacy-modal').style.display = 'none';
+    };
+    window.onclick = function(event) {
+      var modal = document.getElementById('privacy-modal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+
+    // AJAX Formspree-integration
     var form = document.getElementById('contactForm');
     var status = document.getElementById('form-status');
     if (form) {
@@ -132,7 +310,7 @@
         }).then(function(response) {
           if (response.ok) {
             form.reset();
-            status.textContent = "Tack för ditt meddelande! Vi återkommer så snart vi kan.";
+            status.textContent = translations[switcher.value]["contact-send-success"] || "Tack för ditt meddelande! Vi återkommer så snart vi kan.";
             status.style.color = "#00eaff";
           } else {
             response.json().then(function(data){
@@ -154,5 +332,6 @@
   </script>
 </body>
 </html>
+
 
 

@@ -19,6 +19,30 @@ body::before {
   pointer-events: none;
 }
 
+/* RTL-stöd för arabiska */
+body[dir="rtl"] {
+  direction: rtl;
+}
+body[dir="rtl"] header,
+body[dir="rtl"] main,
+body[dir="rtl"] footer {
+  text-align: right;
+}
+body[dir="rtl"] .logo-wrap {
+  flex-direction: row-reverse;
+}
+body[dir="rtl"] nav a,
+body[dir="rtl"] .contact-details p,
+body[dir="rtl"] .about p,
+body[dir="rtl"] .service-card,
+body[dir="rtl"] .hero p,
+body[dir="rtl"] .hero h1 {
+  text-align: right;
+}
+body[dir="rtl"] .privacy-modal-content {
+  text-align: right;
+}
+
 header {
   background: rgba(24,24,40, 0.85);
   box-shadow: 0 4px 18px 0 #14143499;
@@ -160,6 +184,24 @@ h2 {
   font-size: 1.13rem;
 }
 
+/* ====== Policy Section ====== */
+.policy {
+  background: rgba(25,22,60,0.86);
+  border-radius: 18px;
+  box-shadow: 0 2px 22px #00eaff22;
+  padding: 38px 26px 34px 26px;
+  margin-bottom: 30px;
+  margin-top: 16px;
+}
+.policy h2 {
+  color: #ff6bfa;
+  text-shadow: 0 0 8px #ff98fb77;
+}
+.policy p {
+  color: #e8f2fc;
+  font-size: 1.08rem;
+}
+
 /* ====== Kontakt ====== */
 .contact-form {
   max-width: 420px;
@@ -251,6 +293,14 @@ footer {
   text-decoration: underline;
 }
 
+body, html {
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* Internet Explorer 10+ */
+}
+
+body::-webkit-scrollbar, html::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari, Opera */
+}
 
 /* ====== Responsive ====== */
 @media (max-width: 700px) {
@@ -277,4 +327,5 @@ footer {
     padding: 20px 10px;
   }
 }
+
 
