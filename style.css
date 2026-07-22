@@ -1,11 +1,11 @@
 /* ====== Allmän Bas ====== */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #1a1142 url('blue-and-pink-aesthetic-neon-2rsn3z0iezyln2nl.jpg') no-repeat center center fixed;
-  background-size: cover;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #1a1142;
   color: #e8f2fc;
 }
 
@@ -232,7 +232,7 @@ h2 {
 }
 
 .contact-form button {
-  align-self: flex-end;
+  align-self: center;
 }
 
 /* ====== Footer ====== */
@@ -327,5 +327,3 @@ body::-webkit-scrollbar, html::-webkit-scrollbar {
     padding: 20px 10px;
   }
 }
-
-
